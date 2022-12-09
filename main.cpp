@@ -58,7 +58,7 @@ int main() {
 		}
 
         if (IsKeyPressed(KEY_BACKSPACE)) {
-			jumps++;
+			jumps = -1;
 		}
 
 		BeginDrawing();
