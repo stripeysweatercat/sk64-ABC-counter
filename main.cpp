@@ -4,8 +4,7 @@
 #include <cstring>
 #include <iostream>
 
-struct Snake
-{
+struct Snake {
 	float x, y;
 	float speedX, speedY;
 	float width, height, length;
@@ -21,8 +20,7 @@ struct Snake
 	}
 };
  
-struct Food
-{
+struct Food {
 	float x, y, width, height;
 
 	Rectangle GetRect()
@@ -36,8 +34,7 @@ struct Food
 	}
 };
 
-int main()
-{
+int main() {
 	InitWindow(150, 150, "A Press Counter");
 	SetWindowState(FLAG_VSYNC_HINT);
     SetWindowIcon(LoadImage("resources/swaggin.png"));
@@ -47,26 +44,21 @@ int main()
 
 	int jumps = -1;
 
-	while (!WindowShouldClose())
-	{
-		if (IsKeyPressed(KEY_A))
-		{
+	while (!WindowShouldClose()) {
+		if (IsKeyPressed(KEY_SPACE)) {
 			jumps++;
 		}
 
-		if (IsKeyPressed(KEY_SPACE))
-		{
+		if (IsGamepadButtonPressed(0, GAMEPAD_BUTTON_RIGHT_FACE_DOWN)) {
 			jumps++;
 		}
 
-		if (IsGamepadButtonPressed(0, GAMEPAD_BUTTON_RIGHT_FACE_DOWN))
-		{
-			jumps++;
-		}
-
-		if (IsGamepadButtonPressed(0, GAMEPAD_BUTTON_LEFT_FACE_DOWN))
-		{
+		if (IsGamepadButtonPressed(0, GAMEPAD_BUTTON_LEFT_FACE_DOWN)) {
 			jumps = -1;
+		}
+
+        if (IsKeyPressed(KEY_BACKSPACE)) {
+			jumps++;
 		}
 
 		BeginDrawing();
