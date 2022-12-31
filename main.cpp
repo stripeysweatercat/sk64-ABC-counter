@@ -4,40 +4,10 @@
 #include <cstring>
 #include <iostream>
 
-struct Snake {
-	float x, y;
-	float speedX, speedY;
-	float width, height, length;
-
-	Rectangle GetRect()
-	{
-		return Rectangle{ x, y, width, height };
-	}
-
-	void Draw()
-	{
-		DrawRectangleRec(GetRect(), WHITE);
-	}
-};
- 
-struct Food {
-	float x, y, width, height;
-
-	Rectangle GetRect()
-	{
-		return Rectangle{ x, y, width, height };
-	}
-
-	void Draw()
-	{
-		DrawRectangleRec(GetRect(), GRAY);
-	}
-};
-
 int main() {
 	InitWindow(150, 150, "A Press Counter");
 	SetWindowState(FLAG_VSYNC_HINT);
-    SetWindowIcon(LoadImage("resources/swaggin.png"));
+    	SetWindowIcon(LoadImage("resources/swaggin.png"));
 
 	int screenHeight = GetScreenHeight();
 	int screenWidth = GetScreenWidth();
