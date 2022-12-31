@@ -1,8 +1,5 @@
 #include "raylib.h"
 #include <cstdlib>
-#include <ctime>
-#include <cstring>
-#include <iostream>
 
 int main() {
 	InitWindow(150, 150, "A Press Counter");
@@ -27,7 +24,7 @@ int main() {
 			jumps = -1;
 		}
 
-        if (IsKeyPressed(KEY_BACKSPACE)) {
+       	 	if (IsKeyPressed(KEY_BACKSPACE)) {
 			jumps = -1;
 		}
 
